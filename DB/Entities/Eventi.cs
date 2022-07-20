@@ -7,12 +7,11 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Crociera.DB.Entities
 {
-    public class Locali
+    public class Eventi
     {
         [Key]
+        public string CodEvento { get; set; }
         public string CodLocale { get; set; }
-        public string Nome { get; set; }
-        public string Luogo { get; set; }
-        public int Posti { get; set; }
+        public string NomeEvento { get; set; }
     }
 }

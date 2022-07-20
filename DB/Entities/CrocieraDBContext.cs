@@ -1,15 +1,19 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using INTEGRATA_TDPC13.DB.Entities;
+using Crociera.DB.Entities;
 
-namespace INTEGRATA_TDPC13.DB
+namespace Crociera.DB
 {
-    public class DBContext : DbContext
+    public class CrocieraDBContext : DbContext
     {
-        public DBContext(DbContextOptions<DBContext> options)
+        public CrocieraDBContext(DbContextOptions<CrocieraDBContext> options)
             : base(options)
         {
         }
-        public DbSet<Prenotazione> Prenotazione { get; set; }
+        public DbSet<Prenotazioni> Prenotazioni { get; set; }
+        public DbSet<Eventi> Eventi { get; set; }
+        public DbSet<Locali> Locali { get; set; }
+        public DbSet<Repliche> Repliche { get; set; }
+
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
