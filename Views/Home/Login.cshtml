@@ -1,0 +1,32 @@
+﻿@{
+    ViewData["Title"] = "Login";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model LoginModel
+@using Microsoft.AspNetCore.Identity
+@using Crociera.DB.Entities
+@inject SignInManager<User> SignInManager
+    @if (!SignInManager.IsSignedIn(User))
+    {
+    <div class="container">
+        <div class="row">
+            <div class="col-6">
+                <form asp-action="Login" asp-controller="Home" method="post" style="text-align:center">
+                    <div class="form-group">
+                        <label asp-for="@Model.Email"></label>
+                        <input asp-for="@Model.Email" class="form-control" />
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="@Model.Password"></label>
+                        <input asp-for="@Model.Password" class="form-control" />
+                    </div>
+                    <input type="submit" class="btn btn-primary" value="Login" />
+                </form>
+            </div>
+        </div>
+    </div>
+    }
+    else
+    {
+    <div>Sei già loggato</div>
+    }
