@@ -16,25 +16,25 @@ namespace Crociera.DB
         }
         public List<Locali> GetLocali()
         {
-            //select * from locali
+            //select * from Locali
             List<Locali> result = this.CrocieraDBContext.Locali.ToList();
             return result;
         }
         public List<Eventi> GetEventi()
         {
-            //select * from locali
+            //select * from Eventi
             List<Eventi> result = this.CrocieraDBContext.Eventi.ToList();
             return result;
         }
         public List<Repliche> GetRepliche()
         {
-            //select * from locali
+            //select * from Repliche
             List<Repliche> result = this.CrocieraDBContext.Repliche.ToList();
             return result;
         }
         public List<Prenotazioni> GetPrenotazioni()
         {
-            //select * from locali
+            //select * from Prenotazioni
             List<Prenotazioni> result = this.CrocieraDBContext.Prenotazioni.ToList();
             return result;
         }
@@ -44,10 +44,6 @@ namespace Crociera.DB
         //    List<Utenti> result = this.CrocieraDBContext.Utenti.ToList();
         //    return result;
         //}
-
-
-
-
 
 
         //public List<Prenotazione> GetPersons(string id)

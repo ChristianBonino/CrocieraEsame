@@ -18,6 +18,7 @@ namespace Crociera.Controllers
         private SignInManager<User> signInManager;
         private UserManager<User> userManager;
         private UserDBContext dbContext;
+        Repository repository;
 
         public HomeController(SignInManager<User> signInManager,
             UserManager<User> userManager,
@@ -44,7 +45,32 @@ namespace Crociera.Controllers
         }
         public IActionResult Prenotazioni()
         {
-            return View();
+            List<Eventi> Eventi = this.repository.GetEventi();
+            List<Repliche> Repliche = this.repository.GetRepliche();
+            List<Locali> Locali = this.repository.GetLocali();
+
+            List<PrenotazioneModel> prenotazioneModel = new List<PrenotazioneModel>();
+
+            foreach (Eventi evento in Eventi)
+                prenotazioneModel.Add(new PrenotazioneModel()
+                {
+                    NomeEvento = evento.NomeEvento
+                });
+
+            foreach (Repliche replica in Repliche)
+                prenotazioneModel.Add(new PrenotazioneModel()
+                {
+                    DataEOra = replica.DataEOra
+                });
+
+            foreach (Locali locale in Locali)
+                prenotazioneModel.Add(new PrenotazioneModel()
+                {
+                    Nome = locale.Nome,
+                    Luogo = locale.Luogo,
+                    Posti = locale.Posti
+                });
+            return View(prenotazioneModel);
         }
         public IActionResult Eventi()
         {
