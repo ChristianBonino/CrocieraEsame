@@ -2,7 +2,7 @@
 @using Crociera.DB.Entities
 @inject UserManager<User> UserManager
 @inject SignInManager<User> SignInManager
-@model PrenotazioneModel
+@model List<PrenotazioneModel>;
 
 @{
     ViewData["Title"] = "Eventi";
@@ -27,35 +27,32 @@
             <p class="card-text"><b>Target: </b>"Single"</p>
             <button class="btn btn-sm btn-primary m-3" data-bs-toggle="collapse" data-bs-target="#villaggio1">Dettagli</button>
 
-           @* @if (SignInManager.IsSignedIn(User) && !User.IsInRole("Admin"))
+            @* @if (SignInManager.IsSignedIn(User) && !User.IsInRole("Admin"))
             {*@
-
-
-
-
-
-
-
-
-
 
             <div id="v1">
                 <input id="idVillage" type="text" value="villaggio1" hidden></input>
                 <input id="nome" type="text" value="provaNome" hidden></input>
                 <input id="luogo" type="text" value="provaLuogo" hidden></input>
 
-                <div class="mb-2">
-                    @*<label>Posti disponibili: </label>
+
+                @{
+                    @for (int i = 0; i < Model.Count; i++)
+                    {
+
+                        <div class="mb-2">
+                            @*<label>Posti disponibili: </label>
                     <output id="posti" type="number" name=""></output>*@
-                    <label>Posti: </label>
-                    <input id="posti" type="number" name=""></input>
-                </div>
-                <button class="btn btn-sm btn-success m-3 btn-prenotazione" data-div="v1" onclick="ButtonClick(this)">Prenota</button>
+                            <label>Posti: @Model[i].Posti </label>
+                            <input id="posti" type="number" name=""></input>
+                        </div>
+                        <button class="btn btn-sm btn-success m-3 btn-prenotazione" data-div="v1" onclick="ButtonClick(this)">Prenota</button>
+
+                        @*    }*@
+                    }
+
+                }
             </div>
-        @*    }*@
-
-
-
             <div id="villaggio1" class="collapse">
                 Un Villaggio super esclusivo riservato ai single che cercano la vacanza perfetta dove poter trovare l'anima gemella
                 o semplicemente una settimana ricca di divertimento e relax.
