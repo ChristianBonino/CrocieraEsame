@@ -1,4 +1,5 @@
-﻿namespace Crociera.Models
+﻿
+namespace Crociera.Models
 {
     public class LoginModel
     {

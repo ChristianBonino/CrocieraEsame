@@ -37,16 +37,18 @@ namespace Crociera.Controllers
         {
             return View();
         }
-
-        [Authorize]
-        public IActionResult HiddenPage()
-        {
-            return View();
-        }
         public IActionResult Login()
         {
             LoginModel model = new LoginModel();
             return View(model);
+        }
+        public IActionResult Prenotazioni()
+        {
+            return View();
+        }
+        public IActionResult Eventi()
+        {
+            return View();
         }
 
         [HttpPost]
@@ -54,8 +56,8 @@ namespace Crociera.Controllers
         {
             try
             {
-               //User user = await userManager.FindByNameAsync(loginModel.UserName);
-               User user = await userManager.FindByEmailAsync(loginModel.Email);
+                //User user = await userManager.FindByNameAsync(loginModel.UserName);
+                User user = await userManager.FindByEmailAsync(loginModel.Email);
                 if (user != null)
                 {
                     var result = await signInManager.PasswordSignInAsync(user.UserName, loginModel.Password, false, lockoutOnFailure: true);
