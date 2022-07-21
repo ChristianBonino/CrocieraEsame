@@ -5,6 +5,50 @@
 
 
 // EVENTI 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 function ButtonClick(Ithis) {
     const dataDiv = $(Ithis).attr("data-div");
     const idVillage = $("#" + dataDiv + " #idVillage").val();

@@ -28,7 +28,10 @@ namespace Crociera
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+            services.AddScoped<Repository>();
             services.AddDbContext<UserDBContext>(options => options.UseSqlServer(Configuration.GetConnectionString("AuthDB")));
+            services.AddDbContext<CrocieraDBContext>(options => options.UseSqlServer(Configuration.GetConnectionString("AuthDB")));
+
 
             //User Management
             services.AddIdentity<User, IdentityRole>()

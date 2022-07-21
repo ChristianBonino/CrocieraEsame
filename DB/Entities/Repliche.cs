@@ -7,12 +7,12 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Crociera.DB.Entities
 {
-    public class Prenotazioni
+    public class Repliche
     {
         [Key]
-        public string CodPrenotazione { get; set; } 
-        public string CodUtente { get; set; }
         public string CodReplica { get; set; }
-        public int Quantita { get; set; }
+        public string CodEvento { get; set; }
+        public DateTime DataEOra { get; set; }
+        public bool Annullato { get; set; }
     }
 }

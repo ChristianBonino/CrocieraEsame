@@ -1,6 +1,6 @@
 ﻿USE [master]
 GO
-/****** Object:  Database [Crociera]    Script Date: 19/07/2022 22:16:44 ******/
+/****** Object:  Database [Crociera]    Script Date: 20/07/2022 21:21:56 ******/
 CREATE DATABASE [Crociera]
  CONTAINMENT = NONE
  ON  PRIMARY 
@@ -80,7 +80,7 @@ ALTER DATABASE [Crociera] SET QUERY_STORE = OFF
 GO
 USE [Crociera]
 GO
-/****** Object:  Table [dbo].[AspNetRoleClaims]    Script Date: 19/07/2022 22:16:44 ******/
+/****** Object:  Table [dbo].[AspNetRoleClaims]    Script Date: 20/07/2022 21:21:56 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -96,7 +96,7 @@ CREATE TABLE [dbo].[AspNetRoleClaims](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[AspNetRoles]    Script Date: 19/07/2022 22:16:44 ******/
+/****** Object:  Table [dbo].[AspNetRoles]    Script Date: 20/07/2022 21:21:56 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -112,7 +112,7 @@ CREATE TABLE [dbo].[AspNetRoles](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[AspNetUserClaims]    Script Date: 19/07/2022 22:16:44 ******/
+/****** Object:  Table [dbo].[AspNetUserClaims]    Script Date: 20/07/2022 21:21:56 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -128,7 +128,7 @@ CREATE TABLE [dbo].[AspNetUserClaims](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[AspNetUserLogins]    Script Date: 19/07/2022 22:16:44 ******/
+/****** Object:  Table [dbo].[AspNetUserLogins]    Script Date: 20/07/2022 21:21:56 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -145,7 +145,7 @@ CREATE TABLE [dbo].[AspNetUserLogins](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[AspNetUserRoles]    Script Date: 19/07/2022 22:16:44 ******/
+/****** Object:  Table [dbo].[AspNetUserRoles]    Script Date: 20/07/2022 21:21:56 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -160,7 +160,7 @@ CREATE TABLE [dbo].[AspNetUserRoles](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[AspNetUsers]    Script Date: 19/07/2022 22:16:44 ******/
+/****** Object:  Table [dbo].[AspNetUsers]    Script Date: 20/07/2022 21:21:56 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -189,7 +189,7 @@ CREATE TABLE [dbo].[AspNetUsers](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[AspNetUserTokens]    Script Date: 19/07/2022 22:16:44 ******/
+/****** Object:  Table [dbo].[AspNetUserTokens]    Script Date: 20/07/2022 21:21:56 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -207,7 +207,7 @@ CREATE TABLE [dbo].[AspNetUserTokens](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Eventi]    Script Date: 19/07/2022 22:16:44 ******/
+/****** Object:  Table [dbo].[Eventi]    Script Date: 20/07/2022 21:21:56 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -222,48 +222,44 @@ CREATE TABLE [dbo].[Eventi](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Locali]    Script Date: 19/07/2022 22:16:44 ******/
+/****** Object:  Table [dbo].[Locali]    Script Date: 20/07/2022 21:21:56 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
 CREATE TABLE [dbo].[Locali](
 	[CodLocale] [varchar](4) NOT NULL,
-	[Nome] [varchar](50) NULL,
-	[Luogo] [varchar](100) NULL,
-	[Posti] [int] NULL,
+	[Nome] [varchar](50) NOT NULL,
+	[Luogo] [varchar](100) NOT NULL,
+	[Posti] [int] NOT NULL,
  CONSTRAINT [PK_Locali] PRIMARY KEY CLUSTERED 
 (
 	[CodLocale] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Prenotazioni]    Script Date: 19/07/2022 22:16:44 ******/
+/****** Object:  Table [dbo].[Prenotazioni]    Script Date: 20/07/2022 21:21:56 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
 CREATE TABLE [dbo].[Prenotazioni](
 	[CodPrenotazione] [varchar](4) NOT NULL,
-	[CodUtente] [nvarchar](450) NULL,
-	[CodReplica] [varchar](4) NULL,
-	[Quantita] [int] NULL,
- CONSTRAINT [PK_Prenotazioni] PRIMARY KEY CLUSTERED 
-(
-	[CodPrenotazione] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+	[CodUtente] [nvarchar](450) NOT NULL,
+	[CodReplica] [varchar](4) NOT NULL,
+	[Quantita] [int] NOT NULL
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Repliche]    Script Date: 19/07/2022 22:16:44 ******/
+/****** Object:  Table [dbo].[Repliche]    Script Date: 20/07/2022 21:21:56 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
 CREATE TABLE [dbo].[Repliche](
 	[CodReplica] [varchar](4) NOT NULL,
-	[CodEvento] [varchar](4) NULL,
-	[DataEOra] [datetime2](7) NULL,
-	[Annullato] [bit] NULL,
+	[CodEvento] [varchar](4) NOT NULL,
+	[DataEOra] [datetime2](7) NOT NULL,
+	[Annullato] [bit] NOT NULL,
  CONSTRAINT [PK_Repliche] PRIMARY KEY CLUSTERED 
 (
 	[CodReplica] ASC
@@ -274,8 +270,49 @@ INSERT [dbo].[AspNetRoles] ([Id], [ConcurrencyStamp], [Name], [NormalizedName]) 
 GO
 INSERT [dbo].[AspNetUserRoles] ([UserId], [RoleId]) VALUES (N'07ead05e-6ce7-4dd5-adc6-2360392928fe', N'b5dad443-fd55-408a-8039-771d684dffd3')
 GO
-INSERT [dbo].[AspNetUsers] ([Id], [AccessFailedCount], [ConcurrencyStamp], [Email], [EmailConfirmed], [LockoutEnabled], [LockoutEnd], [NormalizedEmail], [NormalizedUserName], [PasswordHash], [PhoneNumber], [PhoneNumberConfirmed], [SecurityStamp], [TwoFactorEnabled], [UserName], [FirstName], [LastName]) VALUES (N'07ead05e-6ce7-4dd5-adc6-2360392928fe', 0, N'eff9cfdf-253c-4f98-a272-6b5ccc5dcd4a', N'admin@admin.it', 0, 1, NULL, N'ADMIN@ADMIN.IT', N'ADMIN', N'AQAAAAEAACcQAAAAEDJgc519+N8b4EA82qZ8qhSKFnipgc4oz6FJraoBs4PrUPe5BfVHZtOQwtE+9Gjd3g==', NULL, 0, N'AB47ZNRBRBBLEFXJMESBDADC5O4AZF5J', 0, N'Admin', NULL, NULL)
-INSERT [dbo].[AspNetUsers] ([Id], [AccessFailedCount], [ConcurrencyStamp], [Email], [EmailConfirmed], [LockoutEnabled], [LockoutEnd], [NormalizedEmail], [NormalizedUserName], [PasswordHash], [PhoneNumber], [PhoneNumberConfirmed], [SecurityStamp], [TwoFactorEnabled], [UserName], [FirstName], [LastName]) VALUES (N'f8ec8f1c-c5b1-47a3-856a-cdf9c5c1ab0e', 0, N'9640272c-58d0-46d0-b518-ff7a74a94f1d', N'christian@christian.com', 0, 1, NULL, N'CHRISTIAN@CHRISTIAN.COM', N'CHRISTIAN', N'AQAAAAEAACcQAAAAELLnHy03uByWlRISQgv2egouoOPF3KjUpztZpnBgKVD2DaBpr50cUrD2g7P1fvVtSQ==', NULL, 0, N'FPXCQKCLI2FVEPQ7HTL573ARPVIMARJQ', 0, N'Christian', NULL, NULL)
+INSERT [dbo].[AspNetUsers] ([Id], [AccessFailedCount], [ConcurrencyStamp], [Email], [EmailConfirmed], [LockoutEnabled], [LockoutEnd], [NormalizedEmail], [NormalizedUserName], [PasswordHash], [PhoneNumber], [PhoneNumberConfirmed], [SecurityStamp], [TwoFactorEnabled], [UserName], [FirstName], [LastName]) VALUES (N'0d9b2630-c0ff-460c-b2d6-069eef430f37', 0, N'e02c05a4-0e79-46c3-9949-14af7748d523', N'sic89@tel.com', 0, 1, NULL, N'SIC89@TEL.COM', N'SICILIANOELENA', N'AQAAAAEAACcQAAAAECHmOgF+TGBu9hi7+LL7ub0qeSEGZAY/OXBpMQzNTowqn24qHJPxcCub4gFdfqxvIw==', NULL, 0, N'V4TTQXFZDJBJIYL4KYZCI3EVD6I5U6HD', 0, N'SicilianoElena', NULL, NULL)
+GO
+INSERT [dbo].[AspNetUsers] ([Id], [AccessFailedCount], [ConcurrencyStamp], [Email], [EmailConfirmed], [LockoutEnabled], [LockoutEnd], [NormalizedEmail], [NormalizedUserName], [PasswordHash], [PhoneNumber], [PhoneNumberConfirmed], [SecurityStamp], [TwoFactorEnabled], [UserName], [FirstName], [LastName]) VALUES (N'75bdde9b-c1f9-4e8f-b3f4-86f6f3e2716c', 0, N'7f046320-6419-4051-93fa-c4fb82272bdf', N'for.enrico@mail.com', 0, 1, NULL, N'FOR.ENRICO@MAIL.COM', N'FORNARIENRICO', N'AQAAAAEAACcQAAAAEB73Y6s3WD9YP5xiGV0ZaopY5Oo7qFm+wzzdDBWbSWMEgkGCFibvVzsnMeqR9QdqBw==', NULL, 0, N'WC64JBGBYC7ZIY7EIHA4Q4PXM62QXIQ3', 0, N'FornariEnrico', NULL, NULL)
+GO
+INSERT [dbo].[AspNetUsers] ([Id], [AccessFailedCount], [ConcurrencyStamp], [Email], [EmailConfirmed], [LockoutEnabled], [LockoutEnd], [NormalizedEmail], [NormalizedUserName], [PasswordHash], [PhoneNumber], [PhoneNumberConfirmed], [SecurityStamp], [TwoFactorEnabled], [UserName], [FirstName], [LastName]) VALUES (N'b5e60696-3ae8-48b5-b83e-bb27b31ce1c3', 0, N'b202fedc-a2c2-49cc-8d8a-dfcb8006dcc0', N'b.bianca@usrmail.it', 0, 1, NULL, N'B.BIANCA@USRMAIL.IT', N'BENEDETTIBIANCA', N'AQAAAAEAACcQAAAAEAgLX1RSLwMykNRR6lOB4rbT+bB5rmHk0pcT9pBxnGW4xKKan/yTwTklTuxBaBMYyA==', NULL, 0, N'X7HFDAMZOPJX5TQV6NA45LCG4X2ECMAX', 0, N'BenedettiBianca', NULL, NULL)
+GO
+INSERT [dbo].[AspNetUsers] ([Id], [AccessFailedCount], [ConcurrencyStamp], [Email], [EmailConfirmed], [LockoutEnabled], [LockoutEnd], [NormalizedEmail], [NormalizedUserName], [PasswordHash], [PhoneNumber], [PhoneNumberConfirmed], [SecurityStamp], [TwoFactorEnabled], [UserName], [FirstName], [LastName]) VALUES (N'f478ac3a-dd6e-4951-ae1f-a84be79cc540', 0, N'b5d09a37-79b4-4c79-a1b8-7ef3173d5f56', N'casi.anto@mail.com', 0, 1, NULL, N'CASI.ANTO@MAIL.COM', N'CASSINIANTONIO', N'AQAAAAEAACcQAAAAECdVT3mghZDC/RxasSAScXfmGLbsaRyICIzMR8E54449tP4adHwKQBmrokhwaO7CFg==', NULL, 0, N'IX32QO4OINVSF67POYZPXUMJSLXXMGIR', 0, N'CassiniAntonio', NULL, NULL)
+GO
+INSERT [dbo].[Eventi] ([CodEvento], [CodLocale], [NomeEvento]) VALUES (N'0001', N'0001', N'Concerto di Chopin')
+GO
+INSERT [dbo].[Eventi] ([CodEvento], [CodLocale], [NomeEvento]) VALUES (N'0002', N'0001', N'Beethoven sul mare')
+GO
+INSERT [dbo].[Eventi] ([CodEvento], [CodLocale], [NomeEvento]) VALUES (N'0003', N'0002', N'Il ventaglio - Goldoni')
+GO
+INSERT [dbo].[Eventi] ([CodEvento], [CodLocale], [NomeEvento]) VALUES (N'0004', N'0004', N'Pool Brunch Party')
+GO
+INSERT [dbo].[Locali] ([CodLocale], [Nome], [Luogo], [Posti]) VALUES (N'0001', N'Music Lounge', N'Ponte3-Piano2', 150)
+GO
+INSERT [dbo].[Locali] ([CodLocale], [Nome], [Luogo], [Posti]) VALUES (N'0002', N'Teatro', N'Ponte8-Piano3', 350)
+GO
+INSERT [dbo].[Locali] ([CodLocale], [Nome], [Luogo], [Posti]) VALUES (N'0003', N'Casinò', N'Ponte7-Piano4', 450)
+GO
+INSERT [dbo].[Locali] ([CodLocale], [Nome], [Luogo], [Posti]) VALUES (N'0004', N'Piscina', N'Ponte5-Piano9', 150)
+GO
+INSERT [dbo].[Prenotazioni] ([CodPrenotazione], [CodUtente], [CodReplica], [Quantita]) VALUES (N'0001', N'0001', N'0002', 2)
+GO
+INSERT [dbo].[Prenotazioni] ([CodPrenotazione], [CodUtente], [CodReplica], [Quantita]) VALUES (N'0002', N'0002', N'0002', 5)
+GO
+INSERT [dbo].[Prenotazioni] ([CodPrenotazione], [CodUtente], [CodReplica], [Quantita]) VALUES (N'0003', N'0001', N'0004', 2)
+GO
+INSERT [dbo].[Prenotazioni] ([CodPrenotazione], [CodUtente], [CodReplica], [Quantita]) VALUES (N'0004', N'0004', N'0004', 2)
+GO
+INSERT [dbo].[Repliche] ([CodReplica], [CodEvento], [DataEOra], [Annullato]) VALUES (N'0001', N'0001', CAST(N'2020-07-27T20:30:00.0000000' AS DateTime2), 0)
+GO
+INSERT [dbo].[Repliche] ([CodReplica], [CodEvento], [DataEOra], [Annullato]) VALUES (N'0002', N'0001', CAST(N'2020-07-28T20:30:00.0000000' AS DateTime2), 0)
+GO
+INSERT [dbo].[Repliche] ([CodReplica], [CodEvento], [DataEOra], [Annullato]) VALUES (N'0003', N'0001', CAST(N'2020-07-29T20:30:00.0000000' AS DateTime2), 0)
+GO
+INSERT [dbo].[Repliche] ([CodReplica], [CodEvento], [DataEOra], [Annullato]) VALUES (N'0004', N'0002', CAST(N'2020-08-01T20:30:00.0000000' AS DateTime2), 0)
+GO
+INSERT [dbo].[Repliche] ([CodReplica], [CodEvento], [DataEOra], [Annullato]) VALUES (N'0005', N'0003', CAST(N'2020-07-30T21:00:00.0000000' AS DateTime2), 0)
+GO
+INSERT [dbo].[Repliche] ([CodReplica], [CodEvento], [DataEOra], [Annullato]) VALUES (N'0006', N'0004', CAST(N'2020-07-27T21:00:00.0000000' AS DateTime2), 1)
 GO
 ALTER TABLE [dbo].[AspNetRoleClaims]  WITH CHECK ADD  CONSTRAINT [FK_AspNetRoleClaims_AspNetRoles_RoleId] FOREIGN KEY([RoleId])
 REFERENCES [dbo].[AspNetRoles] ([Id])
@@ -283,44 +320,16 @@ ON DELETE CASCADE
 GO
 ALTER TABLE [dbo].[AspNetRoleClaims] CHECK CONSTRAINT [FK_AspNetRoleClaims_AspNetRoles_RoleId]
 GO
-ALTER TABLE [dbo].[AspNetUserClaims]  WITH CHECK ADD  CONSTRAINT [FK_AspNetUserClaims_AspNetUsers_UserId] FOREIGN KEY([UserId])
-REFERENCES [dbo].[AspNetUsers] ([Id])
-ON DELETE CASCADE
-GO
-ALTER TABLE [dbo].[AspNetUserClaims] CHECK CONSTRAINT [FK_AspNetUserClaims_AspNetUsers_UserId]
-GO
-ALTER TABLE [dbo].[AspNetUserLogins]  WITH CHECK ADD  CONSTRAINT [FK_AspNetUserLogins_AspNetUsers_UserId] FOREIGN KEY([UserId])
-REFERENCES [dbo].[AspNetUsers] ([Id])
-ON DELETE CASCADE
-GO
-ALTER TABLE [dbo].[AspNetUserLogins] CHECK CONSTRAINT [FK_AspNetUserLogins_AspNetUsers_UserId]
-GO
 ALTER TABLE [dbo].[AspNetUserRoles]  WITH CHECK ADD  CONSTRAINT [FK_AspNetUserRoles_AspNetRoles_RoleId] FOREIGN KEY([RoleId])
 REFERENCES [dbo].[AspNetRoles] ([Id])
 ON DELETE CASCADE
 GO
 ALTER TABLE [dbo].[AspNetUserRoles] CHECK CONSTRAINT [FK_AspNetUserRoles_AspNetRoles_RoleId]
 GO
-ALTER TABLE [dbo].[AspNetUserRoles]  WITH CHECK ADD  CONSTRAINT [FK_AspNetUserRoles_AspNetUsers_UserId] FOREIGN KEY([UserId])
-REFERENCES [dbo].[AspNetUsers] ([Id])
-ON DELETE CASCADE
-GO
-ALTER TABLE [dbo].[AspNetUserRoles] CHECK CONSTRAINT [FK_AspNetUserRoles_AspNetUsers_UserId]
-GO
 ALTER TABLE [dbo].[Eventi]  WITH CHECK ADD  CONSTRAINT [FK_Eventi_Locali] FOREIGN KEY([CodLocale])
 REFERENCES [dbo].[Locali] ([CodLocale])
 GO
 ALTER TABLE [dbo].[Eventi] CHECK CONSTRAINT [FK_Eventi_Locali]
-GO
-ALTER TABLE [dbo].[Prenotazioni]  WITH CHECK ADD  CONSTRAINT [FK_Prenotazioni_AspNetUsers] FOREIGN KEY([CodUtente])
-REFERENCES [dbo].[AspNetUsers] ([Id])
-GO
-ALTER TABLE [dbo].[Prenotazioni] CHECK CONSTRAINT [FK_Prenotazioni_AspNetUsers]
-GO
-ALTER TABLE [dbo].[Prenotazioni]  WITH CHECK ADD  CONSTRAINT [FK_Prenotazioni_Repliche] FOREIGN KEY([CodReplica])
-REFERENCES [dbo].[Repliche] ([CodReplica])
-GO
-ALTER TABLE [dbo].[Prenotazioni] CHECK CONSTRAINT [FK_Prenotazioni_Repliche]
 GO
 ALTER TABLE [dbo].[Repliche]  WITH CHECK ADD  CONSTRAINT [FK_Repliche_Eventi] FOREIGN KEY([CodEvento])
 REFERENCES [dbo].[Eventi] ([CodEvento])
