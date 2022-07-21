@@ -11,6 +11,8 @@ namespace Crociera.Models
         public string CodPrenotazione { get; set; }
         public string CodUtente { get; set; }
         public string CodReplica { get; set; }
+        public string CodLocale { get; set; }
+        public string CodEvento { get; set; }
         public string NomeEvento { get; set; }
         public string Nome { get; set; }
         public string Luogo { get; set; }

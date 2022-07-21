@@ -1,5 +1,6 @@
 ﻿@using Microsoft.AspNetCore.Identity
 @using Crociera.DB.Entities
+@using System.Collections.Generic;
 @inject UserManager<User> UserManager
 @inject SignInManager<User> SignInManager
 @model List<PrenotazioneModel>;
@@ -19,53 +20,275 @@
 <br>
 <br>
 
-<div class="col-sm-12">
-    <div class="card" style="width:100%">
-        <img class="card-img-top" src="~/Src/villaggio.jpg" alt="VILLAGGIO 1" style="width:100%">
-        <div class="card-body">
-            <h4 class="card-title">Pacchetto Eden</h4>
-            <p class="card-text"><b>Target: </b>"Single"</p>
-            <button class="btn btn-sm btn-primary m-3" data-bs-toggle="collapse" data-bs-target="#villaggio1">Dettagli</button>
 
-            @* @if (SignInManager.IsSignedIn(User) && !User.IsInRole("Admin"))
-            {*@
-
-            <div id="v1">
-                <input id="idVillage" type="text" value="villaggio1" hidden></input>
-                <input id="nome" type="text" value="provaNome" hidden></input>
-                <input id="luogo" type="text" value="provaLuogo" hidden></input>
-
-
-                @{
-                    @for (int i = 0; i < Model.Count; i++)
+@for (int i = 0; i < Model.Count; i++)
+{
+    if (Model[i].CodEvento == "0001")
+    {
+        <div class="col-sm-12">
+            <div class="card" style="width:100%">
+                <img class="card-img-top" src="~/Src/Concerto.jpg" alt="VILLAGGIO 1" style="width:100%">
+                <div class="card-body">
+                    <h4 class="card-title">@Model[i].NomeEvento</h4>
+                    @switch (@Model[i].CodLocale)
                     {
+                        case "0001":
+                            <p class="card-text"><b>Nome Locale: </b>@Model[i].Nome</p>
+                            <p class="card-text"><b>Luogo: </b>@Model[i].Luogo</p>
+                            <p class="card-text"><b>Posti: </b>@Model[i].Posti</p>
+                            break;
 
+                        case "0002":
+                            <p class="card-text"><b>Nome Locale: </b>@Model[i].Nome</p>
+                            <p class="card-text"><b>Luogo: </b>@Model[i].Luogo</p>
+                            <p class="card-text"><b>Posti: </b>@Model[i].Posti</p>
+                            break;
+
+                        case "0003":
+                            <p class="card-text"><b>Nome Locale: </b>@Model[i].Nome</p>
+                            <p class="card-text"><b>Luogo: </b>@Model[i].Luogo</p>
+                            <p class="card-text"><b>Posti: </b>@Model[i].Posti</p>
+                            break;
+
+                        case "0004":
+                            <p class="card-text"><b>Nome Locale: </b>@Model[i].Nome</p>
+                            <p class="card-text"><b>Luogo: </b>@Model[i].Luogo</p>
+                            <p class="card-text"><b>Posti: </b>@Model[i].Posti</p>
+                            break;
+                    }
+
+                    <button class="btn btn-sm btn-primary m-3" data-bs-toggle="collapse" data-bs-target="#villaggio1">Dettagli</button>
+
+                    @* @if (SignInManager.IsSignedIn(User) && !User.IsInRole("Admin"))
+            {*@
+                    <div id="v1">
                         <div class="mb-2">
-                            @*<label>Posti disponibili: </label>
-                    <output id="posti" type="number" name=""></output>*@
-                            <label>Posti: @Model[i].Posti </label>
+                            <input id="idVillage" type="text" value="@Model[i].CodLocale" hidden></input>
                             <input id="posti" type="number" name=""></input>
                         </div>
                         <button class="btn btn-sm btn-success m-3 btn-prenotazione" data-div="v1" onclick="ButtonClick(this)">Prenota</button>
+                    </div>
+                    <div id="villaggio1" class="collapse">
+                        Il @Model[i].NomeEvento è un evento super esclusivo riservato ai single che cercano la serata perfetta dove poter trovare l'anima gemella
+                        o ascoltando della bellissima musica live.
+                        Consumazioni non incluse.
+                        <p class="card-text mt-4"><b>Prezzo Biglietto: </b> 20€</p>
+                        <p class="card-text">Il prezzo è da intendersi a persona.</p>
+                        <p class="card-text">1 Drink incluso</p>
+                    </div>
+                </div>
+            </div>
+            <br>
+        </div>
+        break;
+    }
+}
 
-                        @*    }*@
+@for (int i = 0; i < Model.Count; i++)
+{
+    if (Model[i].CodEvento == "0002")
+    {
+        <div class="col-sm-12">
+            <div class="card" style="width:100%">
+                <img class="card-img-top" src="~/Src/Beethoven.jpg" alt="VILLAGGIO 1" style="width:100%">
+                <div class="card-body">
+                    <h4 class="card-title">@Model[i].NomeEvento</h4>
+                    @switch (@Model[i].CodLocale)
+                    {
+                        case "0001":
+                            <p class="card-text"><b>Nome Locale: </b>@Model[i].Nome</p>
+                            <p class="card-text"><b>Luogo: </b>@Model[i].Luogo</p>
+                            <p class="card-text"><b>Posti: </b>@Model[i].Posti</p>
+                            break;
+
+                        case "0002":
+                            <p class="card-text"><b>Nome Locale: </b>@Model[i].Nome</p>
+                            <p class="card-text"><b>Luogo: </b>@Model[i].Luogo</p>
+                            <p class="card-text"><b>Posti: </b>@Model[i].Posti</p>
+                            break;
+
+                        case "0003":
+                            <p class="card-text"><b>Nome Locale: </b>@Model[i].Nome</p>
+                            <p class="card-text"><b>Luogo: </b>@Model[i].Luogo</p>
+                            <p class="card-text"><b>Posti: </b>@Model[i].Posti</p>
+                            break;
+
+                        case "0004":
+                            <p class="card-text"><b>Nome Locale: </b>@Model[i].Nome</p>
+                            <p class="card-text"><b>Luogo: </b>@Model[i].Luogo</p>
+                            <p class="card-text"><b>Posti: </b>@Model[i].Posti</p>
+                            break;
                     }
 
-                }
-            </div>
-            <div id="villaggio1" class="collapse">
-                Un Villaggio super esclusivo riservato ai single che cercano la vacanza perfetta dove poter trovare l'anima gemella
-                o semplicemente una settimana ricca di divertimento e relax.
-                Sono previste serate a tema e giochi Speed dating.
-                <p class="card-text mt-4"><b>PREZZO SETTIMANALE: </b> 600€</p>
-                <p class="card-text">Il prezzo è da intendersi a persona da Lunedi a Domenica</p>
-                <p class="card-text">Confezione da 24 profilattici inclusa :D</p>
-            </div>
-        </div>
-    </div>
-    <br>
-</div>
+                    <button class="btn btn-sm btn-primary m-3" data-bs-toggle="collapse" data-bs-target="#villaggio1">Dettagli</button>
 
+                    @* @if (SignInManager.IsSignedIn(User) && !User.IsInRole("Admin"))
+            {*@
+                    <div id="v1">
+                        <div class="mb-2">
+                            <input id="idVillage" type="text" value="@Model[i].CodLocale" hidden></input>
+                            <input id="posti" type="number" name=""></input>
+                        </div>
+                        <button class="btn btn-sm btn-success m-3 btn-prenotazione" data-div="v1" onclick="ButtonClick(this)">Prenota</button>
+                    </div>
+                    <div id="villaggio1" class="collapse">
+                        Il @Model[i].NomeEvento è un evento fantastico adatto per le coppie che cercano una serata romantica in crociera, ascoltando della bellissima musica live.
+                        Libro con le canzoni da cantare incluso.
+                        <p class="card-text mt-4"><b>Prezzo Biglietto: </b> 25€</p>
+                        <p class="card-text">Il prezzo è da intendersi a persona.</p>
+                        <p class="card-text">1 Bicchiere di Spumante offerto</p>
+                    </div>
+                </div>
+            </div>
+            <br>
+        </div>
+        break;
+    }
+}
+
+@for (int i = 0; i < Model.Count; i++)
+{
+    if (Model[i].CodEvento == "0003")
+    {
+        <div class="col-sm-12">
+            <div class="card" style="width:100%">
+                <img class="card-img-top" src="~/Src/Ventaglio.jpg" alt="VILLAGGIO 1" style="width:100%">
+                <div class="card-body">
+                    <h4 class="card-title">@Model[i].NomeEvento</h4>
+                    @switch (@Model[i].CodLocale)
+                    {
+                        case "0001":
+                            <p class="card-text"><b>Nome Locale: </b>@Model[i].Nome</p>
+                            <p class="card-text"><b>Luogo: </b>@Model[i].Luogo</p>
+                            <p class="card-text"><b>Posti: </b>@Model[i].Posti</p>
+                            break;
+
+                        case "0002":
+                            <p class="card-text"><b>Nome Locale: </b>@Model[i].Nome</p>
+                            <p class="card-text"><b>Luogo: </b>@Model[i].Luogo</p>
+                            <p class="card-text"><b>Posti: </b>@Model[i].Posti</p>
+                            break;
+
+                        case "0003":
+                            <p class="card-text"><b>Nome Locale: </b>@Model[i].Nome</p>
+                            <p class="card-text"><b>Luogo: </b>@Model[i].Luogo</p>
+                            <p class="card-text"><b>Posti: </b>@Model[i].Posti</p>
+                            break;
+
+                        case "0004":
+                            <p class="card-text"><b>Nome Locale: </b>@Model[i].Nome</p>
+                            <p class="card-text"><b>Luogo: </b>@Model[i].Luogo</p>
+                            <p class="card-text"><b>Posti: </b>@Model[i].Posti</p>
+                            break;
+                    }
+
+                    <button class="btn btn-sm btn-primary m-3" data-bs-toggle="collapse" data-bs-target="#villaggio1">Dettagli</button>
+
+                    @* @if (SignInManager.IsSignedIn(User) && !User.IsInRole("Admin"))
+            {*@
+                    <div id="v1">
+                        <div class="mb-2">
+                            <input id="idVillage" type="text" value="@Model[i].CodLocale" hidden></input>
+                            <input id="posti" type="number" name=""></input>
+                        </div>
+                        <button class="btn btn-sm btn-success m-3 btn-prenotazione" data-div="v1" onclick="ButtonClick(this)">Prenota</button>
+                    </div>
+                    <div id="villaggio1" class="collapse">
+                        Il @Model[i].NomeEvento è un evento da non perdere! Quando mai vi ricapiterà di poter ascoltare il Ventaglio sul mare??? Questo è il nostro evento per eccellenza dove misceliamo un insieme di arte e magia!
+                        Biccchiere di Champagne incluso.
+                        <p class="card-text mt-4"><b>Prezzo Biglietto: </b> 35€</p>
+                        <p class="card-text">Il prezzo è da intendersi a persona.</p>
+                        <p class="card-text">1 Drink incluso</p>
+                    </div>
+                </div>
+            </div>
+            <br>
+        </div>
+        break;
+    }
+}
+
+@for (int i = 0; i < Model.Count; i++)
+{
+    if (Model[i].CodEvento == "0004")
+    {
+        <div class="col-sm-12">
+            <div class="card" style="width:100%">
+                <img class="card-img-top" src="~/Src/Poolparty.jpg" alt="VILLAGGIO 1" style="width:100%">
+                <div class="card-body">
+                    <h4 class="card-title">@Model[i].NomeEvento</h4>
+                    @switch (@Model[i].CodLocale)
+                    {
+                        case "0001":
+                            <p class="card-text"><b>Nome Locale: </b>@Model[i].Nome</p>
+                            <p class="card-text"><b>Luogo: </b>@Model[i].Luogo</p>
+                            <p class="card-text"><b>Posti: </b>@Model[i].Posti</p>
+                            break;
+
+                        case "0002":
+                            <p class="card-text"><b>Nome Locale: </b>@Model[i].Nome</p>
+                            <p class="card-text"><b>Luogo: </b>@Model[i].Luogo</p>
+                            <p class="card-text"><b>Posti: </b>@Model[i].Posti</p>
+                            break;
+
+                        case "0003":
+                            <p class="card-text"><b>Nome Locale: </b>@Model[i].Nome</p>
+                            <p class="card-text"><b>Luogo: </b>@Model[i].Luogo</p>
+                            <p class="card-text"><b>Posti: </b>@Model[i].Posti</p>
+                            break;
+
+                        case "0004":
+                            <p class="card-text"><b>Nome Locale: </b>@Model[i].Nome</p>
+                            <p class="card-text"><b>Luogo: </b>@Model[i].Luogo</p>
+                            <p class="card-text"><b>Posti: </b>@Model[i].Posti</p>
+                            break;
+                    }
+
+                    <button class="btn btn-sm btn-primary m-3" data-bs-toggle="collapse" data-bs-target="#villaggio1">Dettagli</button>
+
+                    @* @if (SignInManager.IsSignedIn(User) && !User.IsInRole("Admin"))
+            {*@
+                    <div id="v1">
+                        <div class="mb-2">
+                            <input id="idVillage" type="text" value="@Model[i].CodLocale" hidden></input>
+                            <input id="posti" type="number" name=""></input>
+                        </div>
+                        <button class="btn btn-sm btn-success m-3 btn-prenotazione" data-div="v1" onclick="ButtonClick(this)">Prenota</button>
+                    </div>
+                    <div id="villaggio1" class="collapse">
+                        Il @Model[i].NomeEvento è pool party più grande delle crociere Europee! Vieni a provarlo e non te ne pentirai! Musica e divertimento allo stato puro!
+                        Consumazioni illimitate.
+                        <p class="card-text mt-4"><b>Prezzo Biglietto: </b> 30€</p>
+                        <p class="card-text">Il prezzo è da intendersi a persona.</p>
+                        <p class="card-text">Open Bar!</p>
+                    </div>
+                </div>
+            </div>
+            <br>
+        </div>
+        break;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@*
 <div class="col-sm-12">
     <div class="card" style="width:100%">
         <img class="card-img-top" src="~/Src/villaggio2.jpg" alt="VILLAGGIO 2" style="width:100%">
@@ -74,7 +297,7 @@
             <p class="card-text"><b>Target: </b>"Famiglie"</p>
             <button class="btn btn-sm btn-primary m-3" data-bs-toggle="collapse" data-bs-target="#villaggio2">Dettagli</button>
             @*            @if (SignInManager.IsSignedIn(User) && User.IsInRole("User"))
-            {*@
+            {@
             @if (SignInManager.IsSignedIn(User) && !User.IsInRole("Admin"))
             {
                 <div id="v2">
@@ -103,7 +326,6 @@
     </div>
     <br>
 </div>
-
 <div class="col-sm-12">
     <div class="card" style="width:100%">
         <img class="card-img-top" src="~/Src/villaggio3.jpg" alt="VILLAGGIO 3" style="width:100%">
@@ -112,7 +334,7 @@
             <p class="card-text"><b>Target: </b>"Giovani"</p>
             <button class="btn btn-sm btn-primary m-3" data-bs-toggle="collapse" data-bs-target="#villaggio3">Dettagli</button>
             @*            @if (SignInManager.IsSignedIn(User) && User.IsInRole("User"))
-            {*@
+            {@
             @if (SignInManager.IsSignedIn(User) && !User.IsInRole("Admin"))
             {
                 <div id="v3">
@@ -151,7 +373,7 @@
             <p class="card-text"><b>Target: </b>"Tutto"</p>
             <button class="btn btn-sm btn-primary m-3" data-bs-toggle="collapse" data-bs-target="#villaggio4">Dettagli</button>
             @*            @if (SignInManager.IsSignedIn(User) && User.IsInRole("User"))
-            {*@
+            {@
             @if (SignInManager.IsSignedIn(User) && !User.IsInRole("Admin"))
             {
                 <div id="v4">
@@ -189,7 +411,7 @@
             <p class="card-text"><b>Target: </b>"Coppie"</p>
             <button class="btn btn-sm btn-primary m-3" data-bs-toggle="collapse" data-bs-target="#villaggio5">Dettagli</button>
             @*            @if (SignInManager.IsSignedIn(User) && User.IsInRole("User"))
-            {*@
+            {@
             @if (SignInManager.IsSignedIn(User) && !User.IsInRole("Admin"))
             {
                 <div id="v5">
@@ -218,4 +440,4 @@
         </div>
     </div>
     <br>
-</div>
+</div>*@

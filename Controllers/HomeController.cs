@@ -68,6 +68,7 @@ namespace Crociera.Controllers
                                 Nome = locali.Nome,
                                 Luogo = locali.Luogo,
                                 Posti = locali.Posti,
+                                CodLocale = locali.CodLocale,
                                 Quantita = prenotazioni.Quantita
                             });
                         }
@@ -119,7 +120,34 @@ namespace Crociera.Controllers
         //}
         public IActionResult Eventi()
         {
-            return View();
+            List<PrenotazioneModel> prenotazioneModel = new List<PrenotazioneModel>();
+
+            List<Repliche> Repliche = this.repository.GetRepliche();
+            foreach (Repliche repliche in Repliche)
+            {
+                List<Eventi> ListaEventiByID = this.repository.GetEventiByID(repliche.CodEvento);
+                foreach (Eventi eventi in ListaEventiByID)
+                {
+                    List<Locali> ListaLocaliByID = this.repository.GetLocaliByID(eventi.CodLocale);
+                    foreach (Locali locali in ListaLocaliByID)
+                    {
+                        
+                            prenotazioneModel.Add(new PrenotazioneModel()
+                            {
+                                NomeEvento = eventi.NomeEvento,
+                                CodEvento = eventi.CodEvento,
+                                CodReplica = repliche.CodReplica,
+                                DataEOra = repliche.DataEOra,
+                                Annullato = repliche.Annullato,
+                                Nome = locali.Nome,
+                                Luogo = locali.Luogo,
+                                Posti = locali.Posti,
+                                CodLocale = locali.CodLocale,                             
+                            });                 
+                    }
+                }
+            }
+            return View(prenotazioneModel);
         }
 
         [HttpPost]
