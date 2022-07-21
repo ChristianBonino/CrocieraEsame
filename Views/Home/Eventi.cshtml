@@ -20,12 +20,8 @@
 <br>
 <br>
 
-
-
-
 @for (int i = 0; i < Model.Count; i++)
 {
-
     if (Model[i].CodEvento == "0001")
     {
         <div class="col-sm-12">
@@ -69,10 +65,10 @@
                             break;
                     }
 
-                    <button class="btn btn-sm btn-primary m-3" data-bs-toggle="collapse" data-bs-target="#villaggio1">Dettagli</button> 
+                    <button class="btn btn-sm btn-primary m-3" data-bs-toggle="collapse" data-bs-target="#villaggio1">Dettagli</button>
 
-                    @* @if (SignInManager.IsSignedIn(User) && !User.IsInRole("Admin"))
-            {*@
+                    @*  @if (SignInManager.IsSignedIn(User))*@
+
                     <div id="v1">
                         <div class="mb-2">
                             <input id="idVillage" type="text" value="@Model[i].CodLocale" hidden></input>
@@ -105,7 +101,7 @@
                 <img class="card-img-top" src="~/Src/Beethoven.jpg" alt="VILLAGGIO 1" style="width:100%">
                 <div class="card-body">
                     <h4 class="card-title">@Model[i].NomeEvento</h4>
-                        <p class="card-text"><b>Data e Ora: </b>@Model[i].DataEOra</p>
+                    <p class="card-text"><b>Data e Ora: </b>@Model[i].DataEOra</p>
                     @switch (@Model[i].CodLocale)
                     {
                         case "0001":
@@ -168,7 +164,7 @@
                 <img class="card-img-top" src="~/Src/Ventaglio.jpg" alt="VILLAGGIO 1" style="width:100%">
                 <div class="card-body">
                     <h4 class="card-title">@Model[i].NomeEvento</h4>
-                        <p class="card-text"><b>Data e Ora: </b>@Model[i].DataEOra</p>
+                    <p class="card-text"><b>Data e Ora: </b>@Model[i].DataEOra</p>
                     @switch (@Model[i].CodLocale)
                     {
                         case "0001":
@@ -231,7 +227,7 @@
                 <img class="card-img-top" src="~/Src/Poolparty.jpg" alt="VILLAGGIO 1" style="width:100%">
                 <div class="card-body">
                     <h4 class="card-title">@Model[i].NomeEvento</h4>
-                        <p class="card-text"><b>Data e Ora: </b>@Model[i].DataEOra</p>
+                    <p class="card-text"><b>Data e Ora: </b>@Model[i].DataEOra</p>
                     @switch (@Model[i].CodLocale)
                     {
                         case "0001":
@@ -284,173 +280,3 @@
         break;
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-@*
-<div class="col-sm-12">
-    <div class="card" style="width:100%">
-        <img class="card-img-top" src="~/Src/villaggio2.jpg" alt="VILLAGGIO 2" style="width:100%">
-        <div class="card-body">
-            <h4 class="card-title">Pacchetto Acquapark</h4>
-            <p class="card-text"><b>Target: </b>"Famiglie"</p>
-            <button class="btn btn-sm btn-primary m-3" data-bs-toggle="collapse" data-bs-target="#villaggio2">Dettagli</button>
-            @*            @if (SignInManager.IsSignedIn(User) && User.IsInRole("User"))
-            {@
-            @if (SignInManager.IsSignedIn(User) && !User.IsInRole("Admin"))
-            {
-                <div id="v2">
-                    <input id="idVillage" type="text" value="villaggio2" hidden></input>
-                    <div class="mb-2">
-                        <label>Persone: </label>
-                        <input id="posti" type="number" name=""></input>
-                    </div>
-                    <div>
-                        <label>Periodo: </label>
-                        <input id="settimana" type="week" name=""></input>
-                    </div>
-                    <button class="btn btn-sm btn-success m-3 btn-prenotazione" data-div="v2" onclick="ButtonClick(this)">Prenota</button>
-                </div>
-            }
-            <div id="villaggio2" class="collapse">
-                Una bellissima area di giochi acquatici, dove famiglie e
-                Bambini (da 3 fino a 12 anni) possono giocare, tramite il nostro team di
-                animazione, tra zampilli e getti d'acqua, fontane e scivoli, galeone dei
-                Pirati, cannoni ad acqua e altro ancora.
-                <p class="card-text mt-4"><b>PREZZO SETTIMANALE: </b> 1000€</p>
-                <p class="card-text">Il prezzo è da intendersi a persona da Lunedi a Domenica</p>
-                <p class="card-text">I bambini fino a 12 non pagano</p>
-            </div>
-        </div>
-    </div>
-    <br>
-</div>
-<div class="col-sm-12">
-    <div class="card" style="width:100%">
-        <img class="card-img-top" src="~/Src/villaggio3.jpg" alt="VILLAGGIO 3" style="width:100%">
-        <div class="card-body">
-            <h4 class="card-title">Pacchetto Dune</h4>
-            <p class="card-text"><b>Target: </b>"Giovani"</p>
-            <button class="btn btn-sm btn-primary m-3" data-bs-toggle="collapse" data-bs-target="#villaggio3">Dettagli</button>
-            @*            @if (SignInManager.IsSignedIn(User) && User.IsInRole("User"))
-            {@
-            @if (SignInManager.IsSignedIn(User) && !User.IsInRole("Admin"))
-            {
-                <div id="v3">
-                    <input id="idVillage" type="text" value="villaggio3" hidden></input>
-                    <div class="mb-2">
-                        <label>Persone: </label>
-                        <input id="posti" type="number" name=""></input>
-                    </div>
-                    <div>
-                        <label>Periodo: </label>
-                        <input id="settimana" type="week" name=""></input>
-                    </div>
-                    <button class="btn btn-sm btn-success m-3 btn-prenotazione" data-div="v3" onclick="ButtonClick(this)">Prenota</button>
-                </div>
-            }
-            <div id="villaggio3" class="collapse">
-                Una bellissima area di divertimento e relax, con serate ed
-                Eventi dove i nostri clienti dai 18 anni in su possono partecipare e
-                Godere di pass esclusivi per serate a tema tra aperitivi e relax in
-                Piscina.
-                L'entrata in discoteca è inclusa nel pacchetto.
-                <p class="card-text mt-4"><b>PREZZO SETTIMANALE: </b> 800€</p>
-                <p class="card-text">Il prezzo è da intendersi a persona da Lunedi a Domenica</p>
-                <p class="card-text">Entrata disco incluse</p>
-            </div>
-        </div>
-    </div>
-    <br>
-</div>
-
-<div class="col-sm-12">
-    <div class="card" style="width:100%">
-        <img class="card-img-top" src="~/Src/villaggio4.jpg" alt="VILLAGGIO 4" style="width:100%">
-        <div class="card-body">
-            <h4 class="card-title">Pacchetto Paradiso</h4>
-            <p class="card-text"><b>Target: </b>"Tutto"</p>
-            <button class="btn btn-sm btn-primary m-3" data-bs-toggle="collapse" data-bs-target="#villaggio4">Dettagli</button>
-            @*            @if (SignInManager.IsSignedIn(User) && User.IsInRole("User"))
-            {@
-            @if (SignInManager.IsSignedIn(User) && !User.IsInRole("Admin"))
-            {
-                <div id="v4">
-                    <input id="idVillage" type="text" value="villaggio4" hidden></input>
-                    <div class="mb-2">
-                        <label>Persone: </label>
-                        <input id="posti" type="number" name=""></input>
-                    </div>
-                    <div>
-                        <label>Periodo: </label>
-                        <input id="settimana" type="week" name=""></input>
-                    </div>
-                    <button class="btn btn-sm btn-success m-3 btn-prenotazione" data-div="v4" onclick="ButtonClick(this)">Prenota</button>
-                </div>
-            }
-            <div id="villaggio4" class="collapse">
-                Pacchetto all inclusive comprende un'area aperta a tutti i
-                Nostri clienti senza limiti d'eta. E' possibile usufruire dell'ingresso in
-                Spiaggia esclusiva per la clientela del villaggio,godendo del team di
-                Animazione, giochi aperitivi, baby dance e un'ottima vista mare.
-                <p class="card-text mt-4"><b>PREZZO SETTIMANALE: </b> 950€</p>
-                <p class="card-text">Il prezzo è da intendersi a persona da Lunedi a Domenica</p>
-                <p class="card-text">Pensione completa e servizi spiaggia incluse
-            </div>
-        </div>
-    </div>
-    <br>
-</div>
-
-<div class="col-sm-12">
-    <div class="card" style="width:100%">
-        <img class="card-img-top" src="~/Src/villaggio5.jpg" alt="VILLAGGIO 5" style="width:100%">
-        <div class="card-body">
-            <h4 class="card-title">Pacchetto Privè</h4>
-            <p class="card-text"><b>Target: </b>"Coppie"</p>
-            <button class="btn btn-sm btn-primary m-3" data-bs-toggle="collapse" data-bs-target="#villaggio5">Dettagli</button>
-            @*            @if (SignInManager.IsSignedIn(User) && User.IsInRole("User"))
-            {@
-            @if (SignInManager.IsSignedIn(User) && !User.IsInRole("Admin"))
-            {
-                <div id="v5">
-                    <input id="idVillage" type="text" value="villaggio5" hidden></input>
-                    <div class="mb-2">
-                        <label>Persone: </label>
-                        <input id="posti" type="number" name=""></input>
-                    </div>
-                    <div>
-                        <label>Periodo: </label>
-                        <input id="settimana" type="week" name=""></input>
-                    </div>
-                    <button class="btn btn-sm btn-success m-3 btn-prenotazione" data-div="v5" onclick="ButtonClick(this)">Prenota</button>
-                </div>
-            }
-            <div id="villaggio5" class="collapse">
-                Una bellissima area di divertimento e relax, con serate ed
-                Eventi esclusivi dove i nostri clienti in coppia possono partecipare e
-                Godere di serate a tema "romantico” tra aperitivi e relax in piscina. E'
-                Presente un percorso benessere di coppia incluso nel
-                Pacchetto.
-                <p class="card-text mt-4"><b>PREZZO SETTIMANALE: </b> 1300€</p>
-                <p class="card-text">Il prezzo è da intendersi a persona da Lunedi a Domenica</p>
-                <p class="card-text">Confezione da 3 profilattici inclusa :D</p>
-            </div>
-        </div>
-    </div>
-    <br>
-</div>*@

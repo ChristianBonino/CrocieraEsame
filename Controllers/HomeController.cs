@@ -81,8 +81,8 @@ namespace Crociera.Controllers
         public IActionResult Eventi()
         {
             List<PrenotazioneModel> prenotazioneModel = new List<PrenotazioneModel>();
-            var user = userManager.Users.Where(u => u.Id == userManager.GetUserId(User)).FirstOrDefault(); // Oro colato
-            string email = user.Email;
+            //var user = userManager.Users.Where(u => u.Id == userManager.GetUserId(User)).FirstOrDefault(); // Oro colato
+            //string email = user.Email;
 
             List<Repliche> Repliche = this.repository.GetRepliche();
             foreach (Repliche repliche in Repliche)
