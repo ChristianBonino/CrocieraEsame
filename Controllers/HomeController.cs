@@ -77,50 +77,12 @@ namespace Crociera.Controllers
             }
             return View(prenotazioneModel);
         }
-        //    public IActionResult Prenotazioni()
-        //    {
-        //        List<Eventi> Eventi = this.repository.GetEventi();
-        //    List<Repliche> Repliche = this.repository.GetRepliche();
-        //    List<Locali> Locali = this.repository.GetLocali();
-        //    List<Prenotazioni> prenotazioni = new List<Prenotazioni>();
-        //    for (int i = 0; i < Repliche.Count; i++)
-        //    {
-        //        prenotazioni = this.repository.GetPrenotazioni(Repliche[i].CodReplica);
-        //    }
 
-        //    List<PrenotazioneModel> prenotazioneModel = new List<PrenotazioneModel>();
-
-        //    foreach (Eventi evento in Eventi)
-        //        prenotazioneModel.Add(new PrenotazioneModel()
-        //        {
-        //            NomeEvento = evento.NomeEvento
-        //        });
-
-        //    foreach (Prenotazioni prenotazione in prenotazioni)
-        //        prenotazioneModel.Add(new PrenotazioneModel()
-        //        {
-        //            Quantita = prenotazione.Quantita,
-        //            CodReplica = prenotazione.CodReplica
-        //        });
-
-        //    foreach (Repliche replica in Repliche)
-        //        prenotazioneModel.Add(new PrenotazioneModel()
-        //        {
-        //            DataEOra = replica.DataEOra,
-        //        });
-
-        //    foreach (Locali locale in Locali)
-        //        prenotazioneModel.Add(new PrenotazioneModel()
-        //        {
-        //            Nome = locale.Nome,
-        //            Luogo = locale.Luogo,
-        //            Posti = locale.Posti
-        //        });
-        //    return View(prenotazioneModel);
-        //}
         public IActionResult Eventi()
         {
             List<PrenotazioneModel> prenotazioneModel = new List<PrenotazioneModel>();
+            var user = userManager.Users.Where(u => u.Id == userManager.GetUserId(User)).FirstOrDefault(); // Oro colato
+            string email = user.Email;
 
             List<Repliche> Repliche = this.repository.GetRepliche();
             foreach (Repliche repliche in Repliche)
@@ -131,19 +93,17 @@ namespace Crociera.Controllers
                     List<Locali> ListaLocaliByID = this.repository.GetLocaliByID(eventi.CodLocale);
                     foreach (Locali locali in ListaLocaliByID)
                     {
-                        
-                            prenotazioneModel.Add(new PrenotazioneModel()
-                            {
-                                NomeEvento = eventi.NomeEvento,
-                                CodEvento = eventi.CodEvento,
-                                CodReplica = repliche.CodReplica,
-                                DataEOra = repliche.DataEOra,
-                                Annullato = repliche.Annullato,
-                                Nome = locali.Nome,
-                                Luogo = locali.Luogo,
-                                Posti = locali.Posti,
-                                CodLocale = locali.CodLocale,                             
-                            });                 
+                        prenotazioneModel.Add(new PrenotazioneModel()
+                        {
+                            NomeEvento = eventi.NomeEvento,
+                            CodEvento = eventi.CodEvento,
+                            CodReplica = repliche.CodReplica,
+                            DataEOra = repliche.DataEOra,
+                            Annullato = repliche.Annullato,
+                            Nome = locali.Nome,
+                            Luogo = locali.Luogo,
+                            Posti = locali.Posti,
+                        });
                     }
                 }
             }

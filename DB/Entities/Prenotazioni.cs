@@ -10,7 +10,7 @@ namespace Crociera.DB.Entities
     public class Prenotazioni
     {
         [Key]
-        public string CodPrenotazione { get; set; } 
+        public string CodPrenotazione { get; set; }
         public string CodUtente { get; set; }
         public string CodReplica { get; set; }
         public int Quantita { get; set; }

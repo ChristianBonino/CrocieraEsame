@@ -20,6 +20,7 @@ namespace Crociera.Models
         public int Posti { get; set; }
         public bool Annullato { get; set; }
         public DateTime DataEOra { get; set; }
+        
 
     }
 }

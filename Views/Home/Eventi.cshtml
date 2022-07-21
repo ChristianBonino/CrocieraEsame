@@ -21,8 +21,11 @@
 <br>
 
 
+
+
 @for (int i = 0; i < Model.Count; i++)
 {
+
     if (Model[i].CodEvento == "0001")
     {
         <div class="col-sm-12">
@@ -30,6 +33,18 @@
                 <img class="card-img-top" src="~/Src/Concerto.jpg" alt="VILLAGGIO 1" style="width:100%">
                 <div class="card-body">
                     <h4 class="card-title">@Model[i].NomeEvento</h4>
+                    @switch (@Model[i].CodReplica) // Non funziona mi dispiace..........(<3)
+                    {
+                        case "0001":
+                            <p class="card-text"><b>Data e Ora: </b>@Model[i].DataEOra</p>
+                            break;
+                        case "0002":
+                            <p class="card-text"><b>Data e Ora: </b>@Model[i].DataEOra</p>
+                            break;
+                        case "0003":
+                            <p class="card-text"><b>Data e Ora: </b>@Model[i].DataEOra</p>
+                            break;
+                    }
                     @switch (@Model[i].CodLocale)
                     {
                         case "0001":
@@ -37,19 +52,16 @@
                             <p class="card-text"><b>Luogo: </b>@Model[i].Luogo</p>
                             <p class="card-text"><b>Posti: </b>@Model[i].Posti</p>
                             break;
-
                         case "0002":
                             <p class="card-text"><b>Nome Locale: </b>@Model[i].Nome</p>
                             <p class="card-text"><b>Luogo: </b>@Model[i].Luogo</p>
                             <p class="card-text"><b>Posti: </b>@Model[i].Posti</p>
                             break;
-
                         case "0003":
                             <p class="card-text"><b>Nome Locale: </b>@Model[i].Nome</p>
                             <p class="card-text"><b>Luogo: </b>@Model[i].Luogo</p>
                             <p class="card-text"><b>Posti: </b>@Model[i].Posti</p>
                             break;
-
                         case "0004":
                             <p class="card-text"><b>Nome Locale: </b>@Model[i].Nome</p>
                             <p class="card-text"><b>Luogo: </b>@Model[i].Luogo</p>
@@ -57,7 +69,7 @@
                             break;
                     }
 
-                    <button class="btn btn-sm btn-primary m-3" data-bs-toggle="collapse" data-bs-target="#villaggio1">Dettagli</button>
+                    <button class="btn btn-sm btn-primary m-3" data-bs-toggle="collapse" data-bs-target="#villaggio1">Dettagli</button> 
 
                     @* @if (SignInManager.IsSignedIn(User) && !User.IsInRole("Admin"))
             {*@
@@ -66,7 +78,7 @@
                             <input id="idVillage" type="text" value="@Model[i].CodLocale" hidden></input>
                             <input id="posti" type="number" name=""></input>
                         </div>
-                        <button class="btn btn-sm btn-success m-3 btn-prenotazione" data-div="v1" onclick="ButtonClick(this)">Prenota</button>
+                        <button class="btn btn-sm btn-success m-3 btn-prenotazione" onclick="updateTablePrenotazioni(@Model[i].CodReplica, @Model[i].CodUtente )">Prenota</button>
                     </div>
                     <div id="villaggio1" class="collapse">
                         Il @Model[i].NomeEvento è un evento super esclusivo riservato ai single che cercano la serata perfetta dove poter trovare l'anima gemella
@@ -93,6 +105,7 @@
                 <img class="card-img-top" src="~/Src/Beethoven.jpg" alt="VILLAGGIO 1" style="width:100%">
                 <div class="card-body">
                     <h4 class="card-title">@Model[i].NomeEvento</h4>
+                        <p class="card-text"><b>Data e Ora: </b>@Model[i].DataEOra</p>
                     @switch (@Model[i].CodLocale)
                     {
                         case "0001":
@@ -155,6 +168,7 @@
                 <img class="card-img-top" src="~/Src/Ventaglio.jpg" alt="VILLAGGIO 1" style="width:100%">
                 <div class="card-body">
                     <h4 class="card-title">@Model[i].NomeEvento</h4>
+                        <p class="card-text"><b>Data e Ora: </b>@Model[i].DataEOra</p>
                     @switch (@Model[i].CodLocale)
                     {
                         case "0001":
@@ -217,6 +231,7 @@
                 <img class="card-img-top" src="~/Src/Poolparty.jpg" alt="VILLAGGIO 1" style="width:100%">
                 <div class="card-body">
                     <h4 class="card-title">@Model[i].NomeEvento</h4>
+                        <p class="card-text"><b>Data e Ora: </b>@Model[i].DataEOra</p>
                     @switch (@Model[i].CodLocale)
                     {
                         case "0001":
@@ -269,8 +284,6 @@
         break;
     }
 }
-
-
 
 
 

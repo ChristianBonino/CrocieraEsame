@@ -46,6 +46,40 @@ function getTabellaPrenotazioni() {
     });
 };
 
+function updateTablePrenotazioni(CodReplica, CodUtente) {
+    console.log(CodReplica);
+    console.log(CodUtente);
+
+    //var body = {};
+    //body.CodReplica = model[i].CodReplica;
+    //body.Cognome = lastNameTextArea.value;
+    //$.ajax({
+    //    method: "PATCH",
+    //    url: "/api/Person/UpdatePerson",
+    //    contentType: "application/json; charset=utf-8",
+    //    data: JSON.stringify(body),
+    //    dataType: "json",
+    //    success: function (data, status) {
+    //        console.log(body);
+    //        console.log(data);
+    //        console.log(status);
+    //        if (data == "200") {
+    //            $("#Persons").remove(); // elimina tabella in view
+    //            getTabellaPersons(); // ripristina tabella in view
+    //            hideModal();
+    //        }
+    //        this.always();
+    //    },
+    //    error: function (error, status) {
+    //        console.log(body);
+    //        console.log(error);
+    //        console.log(status);
+    //        this.always();
+    //    },
+    //    always: function () { }
+    //});
+};
+
 
 
 
