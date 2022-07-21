@@ -1,9 +1,52 @@
 ﻿@{
     ViewData["Title"] = "Prenotazioni";
 }
+@using System.Collections.Generic;
+
 <h1>@ViewData["Title"]</h1>
+<br />
+@model List<PrenotazioneModel>;
+
+<div class="container mt-3">
+    <div class="row">
+        <div class="modal-content col-12" style="left:25%">
+            @{
+              
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Nome Evento</th>
+                            <th>Data e Ora</th>
+                            <th>Nome del Locale</th>
+                            <th>Luogo</th>
+                            <th>Quantita</th>
+                        </tr>
+                    </thead>
+
+                    @for (int i = 0; i < Model.Count; i++)
+                    {
+                        <tr>
+                            <td>@Model[i].NomeEvento</td>
+                            <td>@Model[i].DataEOra</td>
+                            <td>@Model[i].Nome</td>
+                            <td>@Model[i].Luogo</td>
+                            <td>@Model[i].Quantita</td>
+                        </tr>
+                    }
+                </table>
+            }
+        </div>
+    </div>
+</div>
+
+
+
+
+@*
 
 <div class="justify-content-center">
-    <button class="btn-primary" onclick="getTabellaPrenoa()">Mostra prenotazioni</button>
-        <div id="myPrenota"></div>
+    <button class="btn-primary" onclick="getTabellaPrenotazioni(PrenotazioneModel)">Mostra Prenotazioni</button>
+    <div id="myPrenota"></div>
 </div>
+
+*@

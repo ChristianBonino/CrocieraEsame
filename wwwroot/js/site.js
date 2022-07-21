@@ -1,15 +1,50 @@
-﻿// Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
-// for details on configuring this project to bundle and minify static web assets.
+﻿
+function getTabellaPrenotazioni() {
+    $.ajax({
+        method: "GET",
+        url: "/api/Person/GetAllPrenotazioni",
+        contentType: "application/json; charset=utf-8",
+        dataType: "json",
+        success: function (data, status) {
+            console.log(data);
 
-// Write your JavaScript code.
+            let tableData = `
+                             <table id="Persons" class="table table-striped table-bordered" style="background-color: azure;">
+                                <thead>
+                                    <tr>
+                                        <th>Nome</th>
+                                        <th>Cognome</th>
+                                        <th>ID Univoco</th>
+                                        <th>Delete</th>
+                                        <th>Edit</th>
+                                    </tr>
+                                </thead>
+                                <tbody>`;
 
-
-// EVENTI 
-
-
-
-
-
+            for (var i = 0; i < data.length; i++) {
+                tableData += `<tr>
+                                <td> ${data[i].nome} </td>
+                                <td> ${data[i].cognome} </td>
+                                <td> ${data[i].id} </td>
+                                <td id="${data[i].id}" onclick="deletePerson(this)">
+                                    <i class="fa fa-trash text-primary" aria-hidden="true"></i> 
+                                <td id="${data[i].id}" onclick="showModalForEditPerson(this)">
+                                    <i class="fa fa-edit text-primary" aria-hidden="true"></i> </td>
+                              </tr>`;
+            }
+            tableData += `<tbody>`;
+            $("#myPrenota").append(tableData);
+            $("button").hide();
+            this.always();
+        },
+        error: function (error, status) {
+            console.log(error);
+            console.log(status);
+            this.always();
+        },
+        always: function () { }
+    });
+};
 
 
 

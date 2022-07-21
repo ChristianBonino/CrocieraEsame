@@ -14,16 +14,16 @@ namespace Crociera.DB
         {
             this.CrocieraDBContext = CrocieraDBContext;
         }
-        public List<Locali> GetLocali()
+        public List<Locali> GetLocaliByID(string CodLocale)
         {
             //select * from Locali
-            List<Locali> result = this.CrocieraDBContext.Locali.ToList();
+            List<Locali> result = this.CrocieraDBContext.Locali.Where(l => l.CodLocale == CodLocale).ToList();
             return result;
         }
-        public List<Eventi> GetEventi()
+        public List<Eventi> GetEventiByID(string CodEvento)
         {
             //select * from Eventi
-            List<Eventi> result = this.CrocieraDBContext.Eventi.ToList();
+            List<Eventi> result = this.CrocieraDBContext.Eventi.Where(e => e.CodEvento == CodEvento).ToList();
             return result;
         }
         public List<Repliche> GetRepliche()
@@ -32,12 +32,13 @@ namespace Crociera.DB
             List<Repliche> result = this.CrocieraDBContext.Repliche.ToList();
             return result;
         }
-        public List<Prenotazioni> GetPrenotazioni()
+        public List<Prenotazioni> GetPrenotazioni(string CodReplica)
         {
             //select * from Prenotazioni
-            List<Prenotazioni> result = this.CrocieraDBContext.Prenotazioni.ToList();
+            List<Prenotazioni> result = this.CrocieraDBContext.Prenotazioni.Where(p => p.CodReplica == CodReplica).ToList();
             return result;
         }
+
         //public List<Utenti> GetUtenti()
         //{
         //    //select * from locali
